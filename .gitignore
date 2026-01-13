@@ -1,0 +1,52 @@
+# --- Build outputs ---
+build/
+cmake-build-*/
+out/
+bin/
+lib/
+
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dll
+*.dylib
+*.exe
+*.out
+*.app
+
+# --- CMake ---
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# --- Debug / profiler ---
+*.pdb
+*.idb
+*.ilk
+*.dSYM/
+*.prof
+
+# --- IDEs ---
+.vscode/
+.idea/
+*.code-workspace
+
+# Visual Studio
+.vs/
+*.vcxproj*
+*.sln
+*.opensdf
+*.sdf
+
+# CLion
+cmake-build-debug/
+cmake-build-release/
+
+# --- OS junk ---
+.DS_Store
+Thumbs.db

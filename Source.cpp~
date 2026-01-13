@@ -1,0 +1,38 @@
+#include <iostream>
+#include <windows.h>
+#include <netlistmgr.h>
+
+/*
+Made by Sahil Talwar
+Really tried not to use ChatGPT at all, love C++ and I love the programming I was brought on when I was younger, do coding because you love it and want to fix problems, not
+because people on TikTok tell you the best ways to get a job, earn money, etc. What happens when you finally get that money, that job? Is that where coding stops for you?
+*/
+
+int main() {
+	std::cout << "Running" << std::endl;
+	INetworkListManager* pNWLM;
+	INetworkListManagerEvents* pNWLME;
+	std::string debounce;
+
+	CoInitialize(NULL); // We have to do this first to tell the computer hey im gonna use COM!
+
+	HRESULT comState = CoCreateInstance(CLSID_NetworkListManager, NULL, CLSCTX_ALL, IID_INetworkListManager, (void**)&pNWLM);
+
+	// The reason why we use succeeded here over any just == ois because S_OK can return so much and specifically SUCCEEDED checks for a confirmed successive code
+	if(SUCCEEDED(comState)) {
+		std::cout << "Success" << std::endl;
+		for (int i = 0; i < 5; i++) {
+			std::cin >> debounce;
+			VARIANT_BOOL isConn;
+			pNWLM->get_IsConnectedToInternet(&isConn);
+			if (isConn == -1) {
+				std::cout << "Connected" << std::endl;
+			}
+		}
+
+	} else if (FAILED(comState)) {
+		std::cout << "FAILED" << std::endl;
+		std::cout << std::hex << comState << std::endl;
+	}	
+
+} 
