@@ -2,6 +2,7 @@
 #include <windows.h>
 #include <netlistmgr.h>
 #include "ConnectivityMonitor.h"
+#define DEBUG true
 
 int failCheck(HRESULT hr) {
 	if (FAILED(hr)) {
@@ -20,7 +21,10 @@ void printConnectivityDetails(INetworkListManager* pNWLM) {
 	failCheck(networkCheck);
 	INetworkConnection* in[10];
 	ULONG elementNum = NULL;
-	iENC->Next(10, in, &elementNum);
+	#ifdef DEBUG
+	std::cout << "Value" << std::endl;
+	#endif
+	iENC->Next(1, in, &elementNum);
 	std::cout << in[0] << std::endl; // Check out functions on in[0] here
 }
 
@@ -37,6 +41,7 @@ int main() {
 	// The reason why we use succeeded here over any just == ois because S_OK can return so much and specifically SUCCEEDED checks for a confirmed successive code
 	if(SUCCEEDED(comState)) {
 		std::cout << "Success" << std::endl;
+		printConnectivityDetails(pNWLM);
 
 		NLM_CONNECTIVITY newConn;
 		// Remember that HResult in this context still emans just handling error and success codes

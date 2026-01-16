@@ -1,5 +1,5 @@
 ﻿  Source.cpp
-C:\Users\natsu\source\repos\WindowsWiFiFixer\Source.cpp(19,29): warning C4101: 'pNWLME': unreferenced local variable
-C:\Users\natsu\source\repos\WindowsWiFiFixer\Source.cpp(36,20): warning C4101: 'newConn': unreferenced local variable
-C:\Users\natsu\source\repos\WindowsWiFiFixer\Source.cpp(15,1): warning C4715: 'failCheck': not all control paths return a value
+C:\Users\natsu\source\repos\WindowsWiFiFixer\Source.cpp(34,29): warning C4101: 'pNWLME': unreferenced local variable
+C:\Users\natsu\source\repos\WindowsWiFiFixer\Source.cpp(46,20): warning C4101: 'newConn': unreferenced local variable
+C:\Users\natsu\source\repos\WindowsWiFiFixer\Source.cpp(16,1): warning C4715: 'failCheck': not all control paths return a value
   WindowsWiFiFixer.vcxproj -> C:\Users\natsu\source\repos\WindowsWiFiFixer\x64\Debug\WindowsWiFiFixer.exe
